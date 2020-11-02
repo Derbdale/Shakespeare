@@ -38,14 +38,14 @@ const dictionary = {
 
 const insultInput = document.getElementById('Insults');
 
-function generateInsult(){
-    const r_one = Math.floor(Math.random() * dictionary.primaryAdjective.length);
-    const r_two = Math.floor(Math.random() * dictionary.secondaryAdjective.length);
-    const r_three = Math.floor(Math.random() * dictionary.noun.length);
+function generateInsult() {
+  const r_one = Math.floor(Math.random() * dictionary.primaryAdjective.length);
+  const r_two = Math.floor(Math.random() * dictionary.secondaryAdjective.length);
+  const r_three = Math.floor(Math.random() * dictionary.noun.length);
 
-    return `${dictionary.primaryAdjective[r_one]} ${dictionary.secondaryAdjective[r_two]} ${dictionary.noun[r_three]}`
+  return `${dictionary.primaryAdjective[r_one]} ${dictionary.secondaryAdjective[r_two]} ${dictionary.noun[r_three]}`
 }
 
-document.getElementById('InsultButton').onclick = function(){
+document.getElementById('InsultButton').onclick = function () {
   insultInput.value = generateInsult();
 };
