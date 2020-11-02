@@ -36,15 +36,16 @@ const dictionary = {
   ]
 }
 
-function getInsult(){
+const insultInput = document.getElementById('Insults');
 
-    let r_one = Math.floor(Math.random() * dictionary.primaryAdjective.length);
-    let r_two = Math.floor(Math.random() * dictionary.secondaryAdjective.length);
-    let r_three = Math.floor(Math.random() * dictionary.noun.length);
+function generateInsult(){
+    const r_one = Math.floor(Math.random() * dictionary.primaryAdjective.length);
+    const r_two = Math.floor(Math.random() * dictionary.secondaryAdjective.length);
+    const r_three = Math.floor(Math.random() * dictionary.noun.length);
 
-    let insult = `${dictionary.primaryAdjective[r_one]} ${dictionary.secondaryAdjective[r_two]} ${dictionary.noun[r_three]}`
-    document.getElementById('Insults').value = insult
-    console.log(insult)
+    return `${dictionary.primaryAdjective[r_one]} ${dictionary.secondaryAdjective[r_two]} ${dictionary.noun[r_three]}`
 }
 
-document.getElementById('InsultButton').onclick = getInsult;
+document.getElementById('InsultButton').onclick = function(){
+  insultInput.value = generateInsult();
+};
